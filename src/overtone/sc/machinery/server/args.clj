@@ -79,8 +79,8 @@
   (cond
     (= 0 val) 0
     (= 1 val) 1
-    (= true val) 1
-    (= false val) 0
+    (true? val) 1
+    (false? val) 0
     :else (throw (Exception. (str "Unable to convert sc-arg " arg-name " to a bool-like int. Expected one of 0, 1, true, false. Got: " val)))))
 
 (defn- next-power-of-two

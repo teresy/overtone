@@ -79,7 +79,7 @@
                          (let [in-spec (first input-specs )]
                            (cond
                             (or (ugen-sequence-mode? (:mode in-spec))
-                                (= true (:array in-spec)))
+                                (true? (:array in-spec)))
                             (let [arg-seq (drop (dec (count input-specs)) inputs)
                                   inputs  (drop-last (count arg-seq) inputs)]
                               (recur (assoc res (keyword (:name in-spec)) (vec arg-seq))
